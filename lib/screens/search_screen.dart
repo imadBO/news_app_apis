@@ -50,17 +50,25 @@ class SearchScreen extends StatelessWidget {
                   ],
                 ),
                 cubit.loading
-                    ? const  Expanded(child: Center(child: CircularProgressIndicator()))
+                    ? const Expanded(
+                        child: Center(child: CircularProgressIndicator()))
                     : cubit.searchNews.isEmpty
-                        ? const Expanded(child: Center(child: Text('Type somethinng')))
+                        ? Expanded(
+                            child: Center(
+                              child: Text(
+                                'Type somethinng',
+                                style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Colors.grey),
+                              ),
+                            ),
+                          )
                         : Expanded(
-                          child: ListView.builder(
+                            child: ListView.builder(
                               itemBuilder: (context, index) {
                                 return NewsItem(item: cubit.searchNews[index]);
                               },
                               itemCount: cubit.searchNews.length,
                             ),
-                        ),
+                          ),
               ],
             ),
           ),
