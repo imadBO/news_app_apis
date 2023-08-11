@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app_apis/cubits/news_cubit.dart';
-import 'package:news_app_apis/cubits/theme_mode_cubit.dart';
-import 'package:news_app_apis/cubits/theme_mode_states.dart';
+import 'package:news_app_apis/cubits/general_app_cubit.dart';
+import 'package:news_app_apis/cubits/general_app_states.dart';
 import 'package:news_app_apis/screens/home_screen.dart';
 import 'package:news_app_apis/shared/cached_helper.dart';
 import 'package:news_app_apis/shared/cubit/observer.dart';
@@ -25,16 +25,16 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (BuildContext context) => ThemeModeCubit(),
+          create: (BuildContext context) => GeneralAppCubit(),
         ),
         BlocProvider(
           create: (BuildContext context) => NewsCubit(),
         ),
       ],
-      child: BlocConsumer<ThemeModeCubit, ThemeModeStates>(
+      child: BlocConsumer<GeneralAppCubit, GeneralAppStates>(
         listener: (BuildContext context, state) {},
         builder: (BuildContext context, Object? state) {
-          ThemeModeCubit cubit = ThemeModeCubit.get(context);
+          GeneralAppCubit cubit = GeneralAppCubit.get(context);
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'News App',
