@@ -1,0 +1,12 @@
+const String kBaseUrl = 'https://newsapi.org/';
+const String kHeadlinesEndpoint = 'v2/top-headlines';
+const String kSearchNewsEndpoint = 'v2/everything';
+const String kApiKey = 'd4b900204cdf42b38f0e5c30b8ac8303';
+const String kCountry = 'us';
+const String kBusinessNews = 'business';
+const String kScienceNews = 'science';
+const String kSportsNews = 'sports';
+const String kDarkThemeKey = 'isDark';
+const String kLangKey = 'lang';
+const String kArabic = 'ar';
+const String kEnglish = 'en';
